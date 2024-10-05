@@ -7,7 +7,7 @@ breast cancer.
 ```
 
 # Files in this repository
-The source code for fitting tree-based models is currently provided at "github_example.R'. Additional files and sample data will be uploaded soon. We recommend loading the sample data provided in the same folder to quickly test the source code before tailoring it to your own data.
+The source code for fitting tree-based models is currently provided at 'github_example.R'. Additional files and sample data will be uploaded soon. We recommend loading the sample data provided in the same folder to quickly test the source code before tailoring it to your own data.
 
 # Installation
 R is a statistical software program, and RStudio is a user interface for R. We recommend that users install both R and R Studio. Both R and RStudio are free and open source.
