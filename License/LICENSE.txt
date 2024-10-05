@@ -1,2 +1,0 @@
-The source code in this repository is licensed under the GNU General Public License v2.0 (GPL-2.0). 
-Details about the license can be found in the License directory.
