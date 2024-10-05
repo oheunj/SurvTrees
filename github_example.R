@@ -1,4 +1,7 @@
-# install packages
+# this is an example to run the survival decision tree, Cox model, and random survival forest
+# you need to set the working directory correspondingly
+
+# load packages
 library(readr)
 library(tidyr)
 library(stringr)
@@ -24,7 +27,7 @@ library(pec)
 
 
 #------------------------------------------------------------------------------#
-# Survival decision tree
+# survival decision tree
 #------------------------------------------------------------------------------#
 # grow a tree
 fit_SDT = rpart(Surv(survmonths, status) ~ x1 + x2 + x3 + x4 + x5, 
