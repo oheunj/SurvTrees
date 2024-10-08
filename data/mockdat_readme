@@ -3,4 +3,4 @@ The mock data has been generated using a Weibull distribution with specific para
 # Data details:
 - status: death status (1: death; 0: censored)
 - survtimes: survival times
-- X.1 -- X.20: 20 covariates, with the first half of the coefficients set to 1.5 and the remaining half set to 0.5.
+- X.1 to X.20: 20 covariates, with the first half of the coefficients set to 1.5 and the remaining half set to 0.5.
