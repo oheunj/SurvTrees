@@ -1,7 +1,6 @@
-The mock data has been generated using a Weibull distribution with specific parameters through a simulation in R.
+The mock data (n=500) has been generated using a Weibull distribution with specific parameters through a simulation in R.
 
-# Data details
-- n: sample size is 500
+Data details:
 - status: death status (1: death; 0: censored)
 - survtimes: survival times
 - X.1 to X.20: 20 covariates, with the first half of the coefficients set to 1.5 and the remaining half set to 0.5.
