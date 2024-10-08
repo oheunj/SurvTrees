@@ -1,5 +1,5 @@
 # this is an example to run the survival decision tree, Cox model, and random survival forest
-# you need to set the working directory correspondingly
+# you need to set your own working directory
 
 # load packages
 library(readr)
