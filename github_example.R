@@ -153,7 +153,6 @@ calobj = calPlot(
        pam3 = fit_Cox,
        pam4 = fit_RSF),
   Surv(survtimes, status) ~ ., # or specify the formula
-  col = c("red", "darkmagenta", "blue", "forestgreen"),
   time = 36,
   type = "survival",
   legend = F,
