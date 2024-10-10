@@ -7,7 +7,7 @@ breast cancer.
 ```
 
 # Files in this repository
-The source code is currently provided at 'github_example.R'. 
+The source code is currently provided in 'github_example.R'. 
 
 # Installation
 R is a statistical software program, and RStudio is a user interface for R. We recommend that users install both R and R Studio. Both R and RStudio are free and open source.
