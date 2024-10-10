@@ -1,4 +1,4 @@
-The mock data (train n=500; test n=300) has been provided as an illustrative purpose.
+The mock data sets have been provided as an illustrative purpose: "mockdat_train.csv" and "mockdat_test.csv"
 
 Data details:
 - status: death status (1: death; 0: censored)
