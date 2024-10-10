@@ -22,7 +22,7 @@ library(pec)
 #------------------------------------------------------------------------------#
 ######## Survival Decision Tree (SDT) 
 # grow a tree
-fit_SDT = rpart(Surv(survtimes, status) ~ ., 
+fit_SDT = rpart(Surv(survtimes, status) ~ .,  # or specify the formula
                 data = train.dat,
                 method = "exp",
                 control = rpart.control(minsplit = 15))
