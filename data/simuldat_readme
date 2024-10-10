@@ -3,4 +3,4 @@ The sample simulated datasets have been provided as an illustrative purpose for 
 Data details:
 - status: death status (1: death; 0: censored)
 - survtimes: survival times
-- X.1, X.2, ..., X.18: predictor variables
+- X.1, X.2, ..., X.18: a set of predictor variables
