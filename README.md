@@ -15,22 +15,15 @@ R is a statistical software program, and RStudio is a user interface for R. We r
 ## Requirements
 You may need to install the following dependencies first:
 ```{r}
-library(dplyr)
-library(survival)
-library(survminer)
-library(purrr)
-library(lubridate)
-library(janitor)
-library(lubridate)
 library(rpart)
+library(survival)
 library(rpart.plot)
-library(Rcpp)
-library(tidyverse)
-library(partykit)
-library(pec)
-library(Matrix)
-library(rms)
+library(survminer)
+library(gtsummary)
 library(randomForestSRC)
+library(dplyr)
+library(tidyverse)
+library(Hmisc)
 library(pec)
 ```
 
