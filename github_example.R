@@ -20,7 +20,7 @@ library(pec)
 #------------------------------------------------------------------------------#
 # Model development
 #------------------------------------------------------------------------------#
-######## Survival Decision Tree (SDT)
+######## Survival Decision Tree (SDT) 
 # grow a tree
 fit_SDT = rpart(Surv(survtimes, status) ~ ., 
                 data = train.dat,
@@ -78,7 +78,7 @@ kmfit %>%
 
 
 
-######## Cox model
+######## Cox model 
 # fit a multivariable Cox model
 fit_Cox = coxph(Surv(survtimes, status) ~ ., 
                 data = train.dat,
@@ -120,7 +120,7 @@ fit_RSF$importance %>%
 #------------------------------------------------------------------------------#
 # Model evaluation
 #------------------------------------------------------------------------------#
-# c-index
+######## c-index
 surv_obj = Surv(time = test.dat$survtimes, event = test.dat$status)
 
 cindex = c(1-rcorr.cens(x = predict(fit_SDT, test.dat), S = surv_obj)[1],
@@ -128,7 +128,7 @@ cindex = c(1-rcorr.cens(x = predict(fit_SDT, test.dat), S = surv_obj)[1],
            1-rcorr.cens(x = predict(fit_Cox, test.dat), S = surv_obj)[1],
            1-rcorr.cens(x = predict(fit_RSF, test.dat)$predicted, S = surv_obj)[1])
 
-# calibration intercept & slope at year 3
+######## calibration intercept & slope at year 3
 # define the object for calPlot
 pecRpart = function(robj, formula, data){
   data$rpartFactor = factor(predict(robj, newdata = data))
@@ -166,7 +166,7 @@ calmeasures = cbind(lm(calobj$plotFrames$pam1[,1] ~ calobj$plotFrames$pam1[,2])$
                     lm(calobj$plotFrames$pam3[,1] ~ calobj$plotFrames$pam3[,2])$coef,
                     lm(calobj$plotFrames$pam4[,1] ~ calobj$plotFrames$pam4[,2])$coef)
 
-# integrated Brier score
+######## integrated Brier score
 # calculate prediction error curves
 pec = pec(
   list(SDT = fit_SDT_pec, pSDT = fit_pSDT_pec, Cox = fit_Cox, RSF = fit_RSF),
