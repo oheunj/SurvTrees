@@ -18,8 +18,9 @@ library(pec)
 
 
 #------------------------------------------------------------------------------#
-# Survival Decision Tree (SDT)
+# Model development
 #------------------------------------------------------------------------------#
+######## Survival Decision Tree (SDT)
 # grow a tree
 fit_SDT = rpart(Surv(survtimes, status) ~ ., 
                 data = train.dat,
@@ -77,9 +78,7 @@ kmfit %>%
 
 
 
-#------------------------------------------------------------------------------#
-# Cox model
-#------------------------------------------------------------------------------#
+######## Cox model
 # fit a multivariable Cox model
 fit_Cox = coxph(Surv(survtimes, status) ~ ., 
                 data = train.dat,
@@ -94,9 +93,7 @@ fit_Cox %>%
 
 
 
-#------------------------------------------------------------------------------#
-# Random Survival Forest (RSF)
-#------------------------------------------------------------------------------#
+######## Random Survival Forest (RSF)
 # fit a RSF
 fit_RSF = rfsrc(Surv(survtimes, status) ~ ., 
                 data = train.dat,
@@ -121,7 +118,7 @@ fit_RSF$importance %>%
 
 
 #------------------------------------------------------------------------------#
-# Performance metrics
+# Model evaluation
 #------------------------------------------------------------------------------#
 # c-index
 surv_obj = Surv(time = test.dat$survtimes, event = test.dat$status)
