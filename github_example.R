@@ -25,7 +25,7 @@ library(pec)
 fit_SDT = rpart(Surv(survtimes, status) ~ ., 
                 data = train.dat,
                 method = "exp",
-                control = rpart.control(minsplit=15))
+                control = rpart.control(minsplit = 15))
 
 # cross-validation results
 plotcp(fit_SDT)
