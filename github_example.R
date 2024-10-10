@@ -1,4 +1,4 @@
-# this is an example to run the survival decision tree, Cox model, and random survival forest
+# this is an example to run the survival decision tree (SDT), Cox model, and random survival forest (RSF)
 # you need to set your own working directory
 setwd("Specify-Your-Working-Directory")
 set.seed(1)
