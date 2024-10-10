@@ -186,6 +186,10 @@ pec = pec(
 ibs = t(as.matrix(crps(pec, times = c(12, 24, 36))))
 ibs = ibs[,-1] # remove Reference
 
+
+
+
+# combine all performance metrics
 tab = rbind(cindex, calmeasures, ibs)
 rownames(tab) = c("c-index", "CIN", "CSL", "IBS[0,12)", "IBS[0,24)","IBS[0,36)")
 colnames(tab) = c("SDT", "pSDT", "Cox", "RSF")
