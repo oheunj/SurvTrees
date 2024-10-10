@@ -20,8 +20,6 @@ library(pec)
 #------------------------------------------------------------------------------#
 # Survival Decision Tree (SDT)
 #------------------------------------------------------------------------------#
-train.dat = read.csv("mockdat_train.csv")
-
 # grow a tree
 fit_SDT = rpart(Surv(survtimes, status) ~ ., 
                 data = train.dat,
@@ -125,8 +123,6 @@ fit_RSF$importance %>%
 #------------------------------------------------------------------------------#
 # Performance metrics
 #------------------------------------------------------------------------------#
-test.dat = read.csv("mockdat_test.csv")
-
 # c-index
 surv_obj = Surv(time = test.dat$survtimes, event = test.dat$status)
 
