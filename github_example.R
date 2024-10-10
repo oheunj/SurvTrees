@@ -22,7 +22,7 @@ library(pec)
 #------------------------------------------------------------------------------#
 ######## Survival Decision Tree (SDT) 
 # grow a tree
-fit_SDT = rpart(Surv(survtimes, status) ~ .,  # or specify the formula
+fit_SDT = rpart(Surv(survtimes, status) ~ ., # or specify the formula
                 data = train.dat,
                 method = "exp",
                 control = rpart.control(minsplit = 15))
@@ -80,7 +80,7 @@ kmfit %>%
 
 ######## Cox model 
 # fit a multivariable Cox model
-fit_Cox = coxph(Surv(survtimes, status) ~ ., 
+fit_Cox = coxph(Surv(survtimes, status) ~ ., # or specify the formula
                 data = train.dat,
                 x = T, y = T)
 
@@ -95,7 +95,7 @@ fit_Cox %>%
 
 ######## Random Survival Forest (RSF)
 # fit a RSF
-fit_RSF = rfsrc(Surv(survtimes, status) ~ ., 
+fit_RSF = rfsrc(Surv(survtimes, status) ~ ., # or specify the formula
                 data = train.dat,
                 ntree = 500,
                 nodesize = 15,
@@ -140,11 +140,11 @@ pecRpart = function(robj, formula, data){
 }
 
 fit_SDT_pec = pecRpart(robj = fit_SDT,
-                       formula = Surv(survtimes, status) ~ .,
+                       formula = Surv(survtimes, status) ~ ., # or specify the formula
                        data = test.dat)
 
 fit_pSDT_pec = pecRpart(robj = fit_pSDT,
-                        formula = Surv(survtimes, status) ~ .,
+                        formula = Surv(survtimes, status) ~ ., # or specify the formula
                         data = test.dat)
 
 calobj = calPlot(
@@ -152,7 +152,7 @@ calobj = calPlot(
        pam2 = fit_pSDT_pec,
        pam3 = fit_Cox,
        pam4 = fit_RSF),
-  Surv(survtimes, status) ~ .,
+  Surv(survtimes, status) ~ ., # or specify the formula
   col = c("red", "darkmagenta", "blue", "forestgreen"),
   time = 36,
   type = "survival",
@@ -171,7 +171,7 @@ calmeasures = cbind(lm(calobj$plotFrames$pam1[,1] ~ calobj$plotFrames$pam1[,2])$
 pec = pec(
   list(SDT = fit_SDT_pec, pSDT = fit_pSDT_pec, Cox = fit_Cox, RSF = fit_RSF),
   Surv(survtimes, status) ~ X.1 + X.2 + X.3 + X.4 + X.5 + X.6 + X.7 + X.8 + X.9 + X.10 + 
-    X.11 + X.12 + X.13 + X.14 + X.15 + X.16 + X.17 + X.18,
+    X.11 + X.12 + X.13 + X.14 + X.15 + X.16 + X.17 + X.18, # specify your model formula
   data = test.dat,
   exact = FALSE
 )
