@@ -7,7 +7,7 @@ breast cancer.
 ```
 
 # Files in this repository
-The source code is currently provided in 'github_example.R' which loads required R packages and reads two major R codes 'fit_models.R' and 'eval_models.R'
+The source code is currently provided in 'main_sourecode.R' which starts from loading R packages and reads several R functions in the 'functions' folder.
 
 # Installation
 R is a statistical software program, and RStudio is a user interface for R. We recommend that users install both R and R Studio. Both R and RStudio are free and open source.
