@@ -1,7 +1,7 @@
 # this is an example to perform the survival decision tree (SDT), Cox model, and random survival forest (RSF)
 # the file is licensed under the GNU General Public License v2.0 (GPL-2.0)
 
-# please set your own working directory
+# set your own working directory
 setwd("Specify-Your-Working-Directory")
 set.seed(1)
 
@@ -18,7 +18,7 @@ library(Hmisc)
 library(pec)
 library(knitr)
 
-# import several R functions (note: please save them from the folder 'functions' to your working directory)
+# import several R functions (note: save these files from the folder 'functions' to your working directory)
 source("cp.select_fun")
 source("pecRpart_fun")
 
