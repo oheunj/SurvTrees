@@ -15,7 +15,7 @@ library(tidyverse)
 library(Hmisc)
 library(pec)
 
-# import R functions from the folder 'functions'
+# import several R functions from the folder 'functions'
 source("prune_1se_fun")
 source("pecRpart_fun")
 
