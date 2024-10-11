@@ -194,6 +194,3 @@ colnames(tab) = c("SDT", "pSDT", "Cox", "RSF")
 kable(tab)
 
 
-
-
-                 
