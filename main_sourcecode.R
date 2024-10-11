@@ -17,7 +17,7 @@ library(Hmisc)
 library(pec)
 library(knitr)
 
-# import several R functions from the folder 'functions'
+# import several R functions (note: please save them from the folder 'functions' to your working directory)
 source("cp.select_fun")
 source("pecRpart_fun")
 
