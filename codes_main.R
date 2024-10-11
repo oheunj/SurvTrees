@@ -43,7 +43,7 @@ rpart.plot(fit_SDT,
            main = "Survival Decision Tree")
 
 # prune the tree by 1-standard error rule
-fit_pSDT = prune(fit_SDT, cp = cp.select(fit_SDT))
+fit_pSDT = prune_1se(fit_SDT, cp = cp.select(fit_SDT))
 
 # visualize the pruned tree
 rpart.plot(fit_pSDT)
