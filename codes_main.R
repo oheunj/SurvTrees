@@ -15,6 +15,10 @@ library(tidyverse)
 library(Hmisc)
 library(pec)
 
+# import additional codes from the folder 'functions'
+source("prune_1se_fun")
+source("pecRpart_fun")
+
 
 
 
@@ -39,13 +43,6 @@ rpart.plot(fit_SDT,
            main = "Survival Decision Tree")
 
 # prune the tree by 1-standard error rule
-cp.select = function(big.tree) {
-  min.x = which.min(big.tree$cptable[, 4])
-  for(i in 1:nrow(big.tree$cptable)) {
-    if(big.tree$cptable[i, 4] < big.tree$cptable[min.x, 4] + big.tree$cptable[min.x, 5]) 
-      return(big.tree$cptable[i, 1])
-  }
-}
 fit_pSDT = prune(fit_SDT, cp = cp.select(fit_SDT))
 
 # visualize the pruned tree
@@ -143,16 +140,6 @@ cindex = c(1-rcorr.cens(x = predict(fit_SDT, test.dat), S = surv_obj)[1],
 #------------------------------------------------------------------------------#
 # Calculate calibration intercept & slope at year 3
 #------------------------------------------------------------------------------#
-# define the object for calPlot
-pecRpart = function(robj, formula, data){
-  data$rpartFactor = factor(predict(robj, newdata = data))
-  form = update(formula, paste(".~", "rpartFactor", sep=""))
-  survfit = prodlim::prodlim(form, data = data)
-  out = list(rpart = robj, survfit = survfit, levels = levels(data$rpartFactor))
-  class(out) = "pecRpart"
-  return(out)
-}
-
 fit_SDT_pec = pecRpart(robj = fit_SDT,
                        formula = Surv(survtimes, status) ~ ., # or specify the formula
                        data = test.dat)
@@ -187,7 +174,7 @@ calmeasures = cbind(lm(calobj$plotFrames$pam1[,1] ~ calobj$plotFrames$pam1[,2])$
 pec = pec(
   list(SDT = fit_SDT_pec, pSDT = fit_pSDT_pec, Cox = fit_Cox, RSF = fit_RSF),
   Surv(survtimes, status) ~ X.1 + X.2 + X.3 + X.4 + X.5 + X.6 + X.7 + X.8 + X.9 + X.10 + 
-    X.11 + X.12 + X.13 + X.14 + X.15 + X.16 + X.17 + X.18, # specify your model formula
+    X.11 + X.12 + X.13 + X.14 + X.15 + X.16 + X.17 + X.18, # specify the formula
   data = test.dat,
   exact = FALSE
 )
