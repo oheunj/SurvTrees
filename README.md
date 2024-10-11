@@ -25,6 +25,7 @@ library(dplyr)
 library(tidyverse)
 library(Hmisc)
 library(pec)
+library(knitr)
 ```
 
 # License
