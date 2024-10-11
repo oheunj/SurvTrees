@@ -1,4 +1,4 @@
-# this is an example to run the survival decision tree (SDT), Cox model, and random survival forest (RSF)
+# this is an example to perform the survival decision tree (SDT), Cox model, and random survival forest (RSF)
 # the file is licensed under the GNU General Public License v2.0 (GPL-2.0)
 # you need to set your own working directory
 setwd("Specify-Your-Working-Directory")
