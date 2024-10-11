@@ -14,6 +14,7 @@ library(dplyr)
 library(tidyverse)
 library(Hmisc)
 library(pec)
+library(knitr)
 
 # import several R functions from the folder 'functions'
 source("cp.select_fun")
