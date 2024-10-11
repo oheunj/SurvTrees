@@ -30,7 +30,7 @@ library(knitr)
 
 Please save additional R codes from the 'functions' folder to your working directory and import these files:
 ```{r}
-source("prune_1se_fun")
+source("prune1se_fun")
 source("pecRpart_fun")
 ```
 
