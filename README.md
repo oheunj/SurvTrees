@@ -28,9 +28,9 @@ library(pec)
 library(knitr)
 ```
 
-Please save additional R codes from the 'functions' folder to your working directory and import these files:
+Additionally, you need to save R codes from the 'functions' folder to your working directory and import these files:
 ```{r}
-source("prune1se_fun")
+source("prune_1se_fun")
 source("pecRpart_fun")
 ```
 
