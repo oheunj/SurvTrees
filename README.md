@@ -28,6 +28,12 @@ library(pec)
 library(knitr)
 ```
 
+Please save additional R codes from the 'functions' folder to your working directory and import these files:
+```{r}
+source("prune_1se_fun")
+source("pecRpart_fun")
+```
+
 # License
 ```{r}
 Licensed under the GNU General Public License v2.0 (GPL-2.0);
