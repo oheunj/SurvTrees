@@ -192,3 +192,8 @@ tab = rbind(cindex, calmeasures, ibs)
 rownames(tab) = c("c-index", "CIN", "CSL", "IBS[0,12)", "IBS[0,24)","IBS[0,36)")
 colnames(tab) = c("SDT", "pSDT", "Cox", "RSF")
 kable(tab)
+
+
+
+
+                 
