@@ -1,5 +1,5 @@
 # Risk Stratification Using Tree-Based Models for Recurrence-Free Survival in Breast Cancer
-This is the work for developing tree-based machine learning models for survival outcomes. The paper is currently under review.
+The goal of this project is to develop tree-based machine learning models for survival outcomes in breast cancer. The full manuscript is available in:
 ```{r}
 Oh, E. J., Alfano, C. M., Esteva, F. J., Baron, P. L., Xiong, W., Brooke, T. E., Chen, E. I., and Chiuzan, C. (2025). Risk stratification using tree-based models for recurrence-free survival in breast cancer. JCO Oncology Advances, 2, e2400011.
 ```
